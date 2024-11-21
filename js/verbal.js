@@ -33,8 +33,15 @@ function startLevel() {
   //   feedback.textContent = '';
   scoreDisplay.textContent = `Score: ${score}`;
   livesDisplay.textContent = `Lives: ${lives}`;
-  generateWord();
-  showWord();
+  // Lose the game
+  if (lives == 0) {
+    newBtn.style.display = "none";
+    seenBtn.style.display = "none";
+    wordDisplay.textContent = "You ran out of lives!";
+  } else {
+    generateWord();
+    showWord();
+  }
 }
 
 // Generate word
@@ -45,22 +52,32 @@ function generateWord() {
 function showWord() {
   wordDisplay.textContent = currentWord;
   wordDisplay.classList.remove("hidden");
+
 }
 
 seenBtn.addEventListener("click", () => {
   if (!appearedWords.has(currentWord)) {
     appearedWords.add(currentWord);
-    score++;
+    lives--;
+    scoreDisplay.textContent = `Score: ${score}`;
+  } else {
+    score ++;
     scoreDisplay.textContent = `Score: ${score}`;
   }
+
+  startLevel();
 });
 
 newBtn.addEventListener("click", () => {
   if (appearedWords.has(currentWord)) {
-    appearedWords.delete(currentWord);
-    scoreDisplay.textContent = `Score: ${score}`;
+    lives --;
+  } else {
+    appearedWords.add(currentWord);
+    score++;
+    //scoreDisplay.textContent = `Score: ${score}`;
   }
   
+  startLevel();
 });
 
 const wordsBundle = [
