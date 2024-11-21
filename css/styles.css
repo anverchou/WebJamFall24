@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #B19CD8, #D955B5);
+  background: linear-gradient(135deg, #003E1F, #931621);
   animation: gradientAnimation 5s ease infinite;
   font-family: "Mountains of Christmas";
 }
@@ -28,10 +28,11 @@ body {
 
   color: white;
   text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;  
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   font-size: 50px;
 
 }
+
