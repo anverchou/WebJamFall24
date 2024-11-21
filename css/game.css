@@ -2,24 +2,37 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     height: 100vh;
     display: flex;
-    background: brown;
-}
-
-.game {
+    background: linear-gradient(135deg, #B19CD8, #D955B5);
+    animation: gradientAnimation 5s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .memory-game {
     width: 640px;
     height: 640px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-}
-
-.memory-card {
+  }
+  
+  .memory-card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -27,29 +40,38 @@ body {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-}
-
-.memory-card:active {
+    box-shadow: 1px 1px 1px #D955B5;
+  }
+  
+  .memory-card:active {
     transform: scale(0.97);
     transition: transform .2s;
-}
-
-.memory-card.flip {
+  }
+  
+  .memory-card.flip {
     transform: rotateY(180deg);
-}
-
-.front-face,
-.back-face {
+  }
+  
+  .front-face {
     width: 100%;
     height: 100%;
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: #FFFFFF;
     backface-visibility: hidden;
-}
-
-.front-face {
+  }
+  
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #F8F3A6;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
     transform: rotateY(180deg);
-}
+  }
