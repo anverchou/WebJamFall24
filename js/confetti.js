@@ -109,18 +109,18 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 		waveAngle += 0.01;
 		for (var i = 0; i < particles.length; i++) {
 			particle = particles[i];
-			if (!streamingConfetti && particle.y < -15)
+			if (!streamingConfetti && particle.y < -15) {
 				particle.y = height + 100;
-			else {
+			}else {
 				particle.tiltAngle += particle.tiltAngleIncrement;
 				particle.x += Math.sin(waveAngle);
 				particle.y += (Math.cos(waveAngle) + particle.diameter + particleSpeed) * 0.5;
 				particle.tilt = Math.sin(particle.tiltAngle) * 15;
 			}
 			if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
-				if (streamingConfetti && particles.length <= maxParticleCount)
+				if (streamingConfetti && particles.length <= maxParticleCount){
 					resetParticle(particle, width, height);
-				else {
+				}else {
 					particles.splice(i, 1);
 					i--;
 				}

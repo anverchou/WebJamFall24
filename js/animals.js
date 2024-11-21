@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let score = 0;
 
 function flipCard() {
   if (lockBoard) return;
@@ -31,6 +32,12 @@ function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
 
+  score++;
+
+  if (score == 6) {
+    endGame();
+  }
+
   resetBoard();
 }
 
@@ -56,5 +63,11 @@ function resetBoard() {
     card.style.order = randomPos;
   });
 })();
+
+function endGame() {
+
+  // End the game here
+
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
