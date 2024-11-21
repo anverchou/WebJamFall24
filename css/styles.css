@@ -1,19 +1,24 @@
 body {
-    height: 100vh;
-    background: linear-gradient(135deg, #B19CD8, #D955B5);
-    animation: gradientAnimation 5s ease infinite;
+  height: 100vh;
+  background: linear-gradient(135deg, #B19CD8, #D955B5);
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
 
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-  
-    50% {
-      background-position: 100% 50%;
-    }
-  
-    100% {
-      background-position: 0% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cover {
+  background-size: cover;
+  background-position: center;
+}
