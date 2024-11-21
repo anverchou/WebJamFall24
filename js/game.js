@@ -61,7 +61,7 @@ function updateScores() {
   document.getElementById('current-score').textContent = `Score: ${score}`;
   if (score > highestScore) {
     highestScore = score;
-    localStorage.setItem('highestScore', highestScore); // Update highest score in localStorage
+    localStorage.setItem('highestScore', highestScore); 
     document.getElementById('highest-score').textContent = `Highest Score: ${highestScore}`;
   }
 }

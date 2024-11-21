@@ -4,27 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  background: linear-gradient(135deg, #B19CD8, #D955B5);
-  animation: gradientAnimation 5s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .memory-game {
   width: 640px;
   height: 640px;
@@ -32,7 +11,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 10;
 }
+
 
 .memory-card {
   width: calc(25% - 10px);
@@ -42,7 +27,7 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
-  box-shadow: 1px 1px 1px #D955B5;
+  box-shadow: 2px 2px 2px #10122d;
 }
 
 .memory-card:active {
@@ -60,7 +45,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   backface-visibility: hidden;
 }
 
@@ -70,10 +55,264 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #F8F3A6;
+  background: #fff2c0;
   backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
 }
+
+/* Snow section */
+body {
+  background: linear-gradient(180deg, #87cefa, #b19cd9, #98fb98, #ffc0cb);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+.fa-snowflake {
+color: #ecf2f8;
+}
+
+.snow {
+width: 100%;
+height: 100%;
+position: absolute;
+}
+
+.snowflake {
+animation-name: fall, shake;
+animation-duration: 10s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 200px;
+z-index: 7;
+filter: blur(0.5px);
+}
+
+.snowflake1 {
+animation-name: fall, shake;
+animation-duration: 10s, 3s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 500px;
+top: -100px;
+animation-delay: 1s, 1s;
+z-index: 7;
+filter: blur(0.5px);
+}
+
+.snowflake2 {
+animation-name: fall, shake;
+animation-duration: 8s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 20px;
+top: -100px;
+animation-delay: 2s, 2s;
+z-index: 7;
+filter: blur(0.5px);
+}
+
+.snowflake3 {
+animation-name: fall, shake;
+animation-duration: 9s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+right: 170px;
+top: -100px;
+animation-delay: 3s, 5s;
+z-index: 5;
+filter: blur(0.7px);
+}
+
+.snowflake4 {
+animation-name: fall, shake;
+animation-duration: 15s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+right: 430px;
+top: -100px;
+animation-delay: 4s, 4s;
+z-index: 5;
+}
+
+.snowflake5 {
+animation-name: fall, shake;
+animation-duration: 15s, 4s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 500px;
+top: -100px;
+animation-delay: 6s, 2s;
+font-size: 2rem;
+z-index: 6;
+filter: blur(0.5px);
+}
+
+.snowflake6 {
+animation-name: fall, shake;
+animation-duration: 12s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 75px;
+top: -100px;
+animation-delay: 3.2s, 2s;
+font-size: 2rem;
+z-index: 6;
+}
+
+.snowflake7 {
+animation-name: fall, shake;
+animation-duration: 11s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 650px;
+top: -100px;
+animation-delay: 7.2s, 1s;
+z-index: 7;
+}
+
+.snowflake8 {
+animation-name: fall, shake;
+animation-duration: 12s, 4s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 820px;
+top: -100px;
+animation-delay: 4s, 2s;
+font-size: 2rem;
+z-index: 5;
+filter: blur(0.5px);
+}
+
+.snowflake9 {
+animation-name: fall, shake;
+animation-duration: 12s, 4s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 170px;
+top: -100px;
+animation-delay: 5s, 2s;
+font-size: 2rem;
+z-index: 5;
+filter: blur(0.3px);
+}
+
+.snowflake10 {
+animation-name: fall, shake;
+animation-duration: 15s, 9s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 350px;
+top: -100px;
+animation-delay: 2.7s, 2s;
+font-size: 3rem;
+z-index: 7;
+}
+
+.snowflake11 {
+animation-name: fall, shake;
+animation-duration: 12s, 7s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+right: 400px;
+top: -100px;
+animation-delay: 0.5s, 2s;
+font-size: 3rem;
+z-index: 7;
+}
+
+.snowflake12 {
+/*small*/
+animation-name: fall, shake;
+animation-duration: 12s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+left: 470px;
+top: -100px;
+animation-delay: 5s, 2s;
+z-index: 7;
+filter: blur(0.9px);
+}
+
+.snowflake13 {
+/*small*/
+animation-name: fall, shake;
+animation-duration: 10s, 5s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+right: 220px;
+top: -100px;
+animation-delay: 1s, 2s;
+z-index: 7;
+filter: blur(0.6px);
+}
+
+.snowflake14 {
+/*small*/
+animation-name: fall, shake;
+animation-duration: 9s, 4s;
+animation-timing-function: linear, ease-in-out;
+animation-iteration-count: infinite, infinite;
+position: absolute;
+right: 140px;
+top: -100px;
+animation-delay: 2s, 2s;
+z-index: 7;
+filter: blur(0.5px);
+}
+
+@keyframes fall {
+0% {
+  top: -10%;
+}
+
+100% {
+  top: 100%;
+}
+}
+
+@keyframes shake {
+0% {
+  transform: translatex(0);
+}
+50% {
+  transform: translatex(50px);
+}
+100% {
+  transform: translatex(0);
+}
+}
+
+/* Score Section */
+.score-container {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+}
+
