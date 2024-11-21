@@ -305,14 +305,64 @@ filter: blur(0.5px);
 /* Score Section */
 .score-container {
   position: absolute;
-  top: 10px;
+  top: 6%;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  transform: translate(-50%, -50%);
+  justify-content: center; 
+  gap: 50px;
   color: #ffffff;
-  font-size: 1.5rem;
-  font-family: Arial, sans-serif;
+  font-size: 2rem; 
+  font-family: 'Mountains of Christmas', cursive; 
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7); 
+  font-weight: bold;
 }
 
+.score-container h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit; 
+}
+
+/* Reset Button */
+#reset-score {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffc107; 
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#reset-score:hover {
+  background-color: #e0a800; 
+}
+
+/* Exit Button */
+#exit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #B91F1C; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#exit-button:hover {
+  background-color: #D86558; 
+}
+
+/* Button Container for Exit and Reset at Bottom */
+.button-container {
+  position: absolute;
+  bottom: 20px; 
+  right: 20px;  
+  display: flex;
+  gap: 10px;
+}
