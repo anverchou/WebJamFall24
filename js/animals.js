@@ -1,44 +1,59 @@
 const cards = document.querySelectorAll('.memory-card');
+const currentScoreDisplay = document.getElementById('current-score');
+const highestScoreDisplay = document.getElementById('highest-score');
+const resetButton = document.getElementById('reset-score');
+const exitButton = document.getElementById('exit-button');
+
+// Game state variables
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let score = 0; // Initialize player's score
-let moves = 0; // Count the number of moves
-let highestScore = localStorage.getItem('highestScore') || 0; // Retrieve the highest score
+let score = 0;
+let moves = 0;
+let highestScore = localStorage.getItem('highestScore') || 0;
 
-// Display the score and highest score
-document.getElementById('current-score').textContent = `Score: ${score}`;
-document.getElementById('highest-score').textContent = `Highest Score: ${highestScore}`;
+// Initialize score displays
+updateScores();
 
+// Game functions
 function flipCard() {
-  if (lockBoard) return;
-  if (this === firstCard) return;
+  if (lockBoard) return; // Prevent interaction during unflip delay
+  if (this === firstCard) return; // Prevent flipping the same card twice
 
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
+    // First card flipped
     hasFlippedCard = true;
     firstCard = this;
-
     return;
   }
 
+  // Second card flipped
   secondCard = this;
+  lockBoard = true; // Lock the board to prevent further clicks
   checkForMatch();
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  const isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   moves++; // Increment moves for every pair attempt
-  isMatch ? handleMatch() : unflipCards();
+  if (isMatch) {
+    handleMatch();
+  } else {
+    unflipCards();
+  }
 }
 
 function handleMatch() {
-  // Update score for a successful match
-  score += 10; 
+  score += 10; // Increment score for a successful match
   updateScores();
 
-  disableCards();
+  // Disable matched cards
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
 
   // Check if all cards are matched
   if (document.querySelectorAll('.memory-card.flip').length === cards.length) {
@@ -47,40 +62,78 @@ function handleMatch() {
 }
 
 function unflipCards() {
-  lockBoard = true;
-
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
   }, 1500);
 }
 
+function resetBoard() {
+  // Reset tracking variables
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
 function updateScores() {
-  document.getElementById('current-score').textContent = `Score: ${score}`;
+  currentScoreDisplay.textContent = `Score: ${score}`;
+
+  // Update highest score if current score exceeds it
   if (score > highestScore) {
     highestScore = score;
-    localStorage.setItem('highestScore', highestScore); // Update highest score in localStorage
-    document.getElementById('highest-score').textContent = `Highest Score: ${highestScore}`;
+    localStorage.setItem('highestScore', highestScore);
   }
+
+  highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 }
 
 function endGame() {
   alert(`Game Over! Final Score: ${score}`);
 }
 
-function resetBoard() {
-  [hasFlippedCard, lockBoard] = [false, false];
-  [firstCard, secondCard] = [null, null];
-}
-
 // Shuffle the cards on load
 (function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+  cards.forEach((card) => {
+    const randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+// Reset game functionality
+function resetScores() {
+  localStorage.removeItem('highestScore'); // Clear highest score from storage
+  score = 0;
+  highestScore = 0;
+  moves = 0;
+
+  // Update score displays
+  currentScoreDisplay.textContent = `Score: ${score}`;
+  highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
+
+  alert('Scores have been reset!');
+  resetGame(); // Restart the game
+}
+
+function resetGame() {
+  // Reset all cards and reinitialize the game
+  cards.forEach((card) => {
+    card.classList.remove('flip');
+    card.addEventListener('click', flipCard);
+  });
+
+  // Shuffle the cards again
+  shuffle();
+
+  // Reset board variables
+  resetBoard();
+}
+
+// Go back to main menu
+function goToMainMenu() {
+  window.location.href = 'index.html';
+}
+
+// Add event listeners
+cards.forEach((card) => card.addEventListener('click', flipCard));
+resetButton.addEventListener('click', resetScores);
+exitButton.addEventListener('click', goToMainMenu);
