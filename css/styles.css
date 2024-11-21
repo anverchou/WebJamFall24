@@ -2,6 +2,7 @@ body {
   height: 100vh;
   background: linear-gradient(135deg, #B19CD8, #D955B5);
   animation: gradientAnimation 5s ease infinite;
+  font-family: "Mountains of Christmas";
 }
 
 @keyframes gradientAnimation {
@@ -21,4 +22,16 @@ body {
 .cover {
   background-size: cover;
   background-position: center;
+}
+
+.col {
+
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;  
+  font-size: 50px;
+
 }
