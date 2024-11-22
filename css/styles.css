@@ -54,6 +54,12 @@ footer {
 .cover {
   background-size: cover;
   background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cover:hover {
+  transform: translateY(-20px) scale(1.05); 
+  filter: brightness(1.2); 
 }
 
 .col {
