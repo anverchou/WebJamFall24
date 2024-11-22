@@ -24,18 +24,44 @@ highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 // Button to Start game
 easyBtn.addEventListener("click", () => {
   if (!gameStarted) {
-    lives = 10;
-    wordDisplay.style.color = "black";
-    replayBtn.classList.add("hidden");
+    lives = 5;
     startGame();
   }
 });
 
+mediumBtn.addEventListener("click", () => {
+  if (!gameStarted) {
+    lives = 3;
+    startGame();
+  }
+});
+
+hardBtn.addEventListener("click", () => {
+  if (!gameStarted) {
+    lives = 1;
+    startGame();
+  }
+});
+
+replayBtn.addEventListener("click", () => {
+  livesDisplay.textContent = "Challenge Level:";
+  replayBtn.classList.add("hidden");
+  wordDisplay.classList.add("hidden");
+  easyBtn.classList.remove("hidden");
+  mediumBtn.classList.remove("hidden");
+  hardBtn.classList.remove("hidden");
+});
+
 function startGame() {
+  wordDisplay.style.color = "black";
+  easyBtn.classList.add("hidden");
+  mediumBtn.classList.add("hidden");
+  hardBtn.classList.add("hidden");
   seenBtn.classList.remove("hidden");
   newBtn.classList.remove("hidden");
   gameStarted = true;
   score = 0;
+  appearedWords.clear();
   startLevel();
 }
 

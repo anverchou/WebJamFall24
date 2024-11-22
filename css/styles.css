@@ -62,13 +62,6 @@ footer {
 }
 
 .col:hover {
-<<<<<<< HEAD
-  transform: translateY(-10px);
-}
-
-@media (max-device-width: 1024px) {
-=======
-
   filter: drop-shadow(0 0 8px rgb(255, 252, 172));
   font-size: 100px;
 
@@ -76,7 +69,6 @@ footer {
 
 /* Responsive Font Sizes */
 @media (max-width: 1024px) {
->>>>>>> 710a0ee0d40171dcfb581e351d6553ccc21f8ff9
   .col {
     font-size: 2.5rem;
   }
