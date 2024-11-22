@@ -47,6 +47,13 @@ html {
   font-size: 50px;
 }
 
+.col:hover {
+
+  filter: drop-shadow(0 0 8px rgb(255, 252, 172));
+  font-size: 100px;
+
+}
+
 /* Responsive Font Sizes */
 @media (max-width: 1024px) {
   .col {
