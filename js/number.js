@@ -121,3 +121,12 @@ function endGame(success) {
   startBtn.classList.remove('hidden');
   progressBar.style.width = '0%';
 }
+
+document.getElementById('menu-toggle').addEventListener('click', function () {
+  const dropdownMenu = document.getElementById('dropdown-menu') 
+  if (dropdownMenu.style.display === "none") {
+    dropdownMenu.style.display = "block";
+  } else {
+    dropdownMenu.style.display = "none";
+  }
+});
