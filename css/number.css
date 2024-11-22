@@ -99,6 +99,7 @@ button:hover {
   background-color: white;
   margin: 5px 0;
   border-radius: 25px;
+  box-shadow: none;
 }
 
 .nav {
@@ -123,6 +124,7 @@ button:hover {
   width: 30px;
   height: 24px;
   padding: 0;
+  box-shadow: none;
 }
 
 .menu-button:hover {
