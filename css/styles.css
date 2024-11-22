@@ -1,6 +1,8 @@
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #003E1F, #931621);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px white);
   animation: gradientAnimation 5s ease infinite;
   font-family: "Mountains of Christmas";
 }
@@ -25,7 +27,6 @@ body {
 }
 
 .col {
-
   color: white;
   text-shadow:
     -1px -1px 0 #000,
@@ -33,6 +34,33 @@ body {
     -1px 1px 0 #000,
     1px 1px 0 #000;
   font-size: 50px;
-
 }
 
+/* Snow container */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.snow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+@keyframes fall {
+  100% {
+    transform: translate(10vw, 30vh) scale(0.5);
+  }
+  to {
+    transform: translate(5vw, 100vh) scale(0.5);
+  }
+}
