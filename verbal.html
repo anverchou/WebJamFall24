@@ -41,11 +41,16 @@
 
   <!-- Game Section -->
   <div class="game-container card text-center">
-    <p class="my-4" id="lives" style="position: relative; top:30px;">Lives: 3</p>
+    <p class="mt-4" id="lives">Challenge Level</p>
 
-    <div id="word-display" class="hidden" ></div>
-    <button id="start-btn" style="position: relative; top:30px;">Start Game</button>
-    <div class="answer">
+    <div id="word-display" class="hidden" style="position:relative;"></div>
+    <div class="difficulty">
+      <button id="easy-btn">Easy</button>
+      <button id="medium-btn">Medium</button>
+      <button id="hard-btn">Hard</button>
+      <button id="replay-btn" class="hidden">Replay</button>
+    </div>
+    <div class="answer" style="position:relative; top:20px">
       <button id="seen-btn" class="hidden mb-md-0">Seen</button>
       <button id="new-btn" class="hidden mb-md-0">New</button>
     </div>
