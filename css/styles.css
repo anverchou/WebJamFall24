@@ -27,10 +27,20 @@ body, html {
   }
 }
 
+h1 {
+  text-shadow: 0px 0px 8px whitesmoke;
+  color: white;
+}
+
 .volume-icon {
   width: 8%;
+  max-width: 90px;
   height: auto;
-  max-width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 footer {
@@ -48,6 +58,12 @@ footer {
 .cover {
   background-size: cover;
   background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cover:hover {
+  transform: translateY(-20px) scale(1.05); 
+  filter: brightness(1.2); 
 }
 
 .col {

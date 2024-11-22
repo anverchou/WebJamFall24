@@ -107,12 +107,12 @@ function updateScores() {
 // }
 
 // Shuffle the cards on load
-(function shuffle() {
+function shuffle() {
   cards.forEach((card) => {
     const randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
-})();
+};
 
 // Reset game functionality
 function resetScores() {
@@ -154,6 +154,7 @@ function goToMainMenu() {
 
 // Add event listeners
 cards.forEach((card) => card.addEventListener('click', flipCard));
+window.onload = resetGame();
 resetButton.addEventListener('click', resetGame);
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
