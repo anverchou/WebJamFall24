@@ -4,7 +4,13 @@ body {
   overflow: hidden;
   filter: drop-shadow(0 0 10px white);
   animation: gradientAnimation 5s ease infinite;
+  overflow-x: hidden;
   font-family: "Mountains of Christmas";
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll; /* Enable vertical scrolling */
 }
 
 @keyframes gradientAnimation {
@@ -36,6 +42,25 @@ body {
   font-size: 50px;
 }
 
+/* Responsive Font Sizes */
+@media (max-width: 1024px) {
+  .col {
+    font-size: 2.5rem; /* Reduced font size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .col {
+    font-size: 2rem; /* Reduced font size for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .col {
+    font-size: 1.5rem; /* Reduced font size for mobile phones */
+  }
+}
+
 /* Snow container */
 .snow-container {
   position: fixed;
@@ -56,6 +81,21 @@ body {
   border-radius: 50%;
 }
 
+/* Responsive Snowflake Sizes */
+@media (max-width: 768px) {
+  .snow {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .snow {
+    width: 6px;
+    height: 6px;
+  }
+}
+
 @keyframes fall {
   100% {
     transform: translate(10vw, 30vh) scale(0.5);
@@ -65,89 +105,22 @@ body {
   }
 }
 
-.nav div {
-  height: 4px;
-  background-color: white;
-  margin: 5px 0;
-  border-radius: 25px;
+/* Layout and Padding Adjustments */
+@media (max-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
 }
 
-.nav {
-  width: 30px;
-  display: block;
-  margin: 1em 0 0 0;
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
 }
 
-.dropdown-menu-container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.menu-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 24px;
-  padding: 0;
-}
-
-.menu-button:hover {
-  background-color: transparent;
-}
-
-.bar {
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-/* First bar */
-.bar:nth-child(1) {
-  width: 27px;
-}
-
-/* Second bar */
-.bar:nth-child(2) {
-  width: 20px;
-}
-
-/* Third bar */
-.bar:nth-child(3) {
-  width: 25px;
-}
-
-.menu-button:hover .bar {
-  width: 30px;
-}
-
-.hidden {
-  display: none;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  display: block;
-  padding: 5px 10px;
-  color: #333;
-  text-decoration: none;
-}
-
-.dropdown-item:hover {
-  background-color: #f0f0f0;
+@media (max-width: 480px) {
+  body {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 }
