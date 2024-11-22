@@ -16,11 +16,11 @@ let highestScore = localStorage.getItem('highestScore') || 0;
 updateScores();
 
 document.getElementById('menu-toggle').addEventListener('click', function () {
-  const dropdownMenu = document.getElementById('dropdown-menu') 
-  if (dropdownMenu.style.display === "none") {
-    dropdownMenu.style.display = "block";
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  if (!dropdownMenu.style.display || dropdownMenu.style.display === "none") {
+    dropdownMenu.style.display = "block"; // Show the menu
   } else {
-    dropdownMenu.style.display = "none";
+    dropdownMenu.style.display = "none"; // Hide the menu
   }
 });
 

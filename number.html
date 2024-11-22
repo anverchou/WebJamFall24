@@ -23,6 +23,11 @@
     </div>
   </div>
   <h1 class="display-3 fw-bold text-center py-5">Number Memory Game</h1>
+  <!-- Score Section -->
+  <div class="score-container" style="font-size: 3rem; text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);">
+    <h2 id="current-score">Score: 0</h2>
+    <h2 id="highest-score">Highest Score: 0</h2>
+</div>
   <div id="instruction"></div>
   <div class="game-container card text-center">
     <p class="pt-5" id="level">Level: 1</p>
@@ -36,9 +41,6 @@
     <p class="pt-2" id="feedback" style="font-size: 1.2rem;"></p>
   </div>
 
-  <div class="button-container">
-    <button id="reset-score" class="btn btn-warning">Reset Score</button>
-  </div>
   <script src="./js/number.js"></script>
 </body>
 </html>

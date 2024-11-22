@@ -94,6 +94,29 @@ button:hover {
   background-color: #e0a800;
 }
 
+/* Score Section */
+.score-container {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  gap: 50px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Mountains of Christmas', cursive;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  padding-top: 300px;
+}
+
+.score-container h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
 /* Button Container for Exit and Reset at Bottom */
 .button-container {
   position: absolute;
@@ -188,4 +211,68 @@ button:hover {
 
 .dropdown-item:hover {
   background-color: #f0f0f0;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+  .game-container {
+    width: 70%;
+    height: 50%;
+    font-size: 1.2rem;
+  }
+
+  .score-container {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game-container {
+    width: 80%;
+    height: 55%;
+    font-size: 1rem;
+  }
+
+  .score-container {
+    top: 7%;
+    font-size: 1.5rem !important;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-container {
+    width: 90%;
+    height: 60%;
+    font-size: 1.5rem !important;
+  }
+
+  .score-container {
+    top: 2%;
+    font-size: 2rem !important;
+    gap: 10px;
+  }
+
+  input {
+    font-size: 1.2rem !important;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 1rem !important;
+    padding: 6px 10px;
+  }
 }

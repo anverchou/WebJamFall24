@@ -2,10 +2,16 @@ let level = 1;
 let currentNumber = '';
 let gameStarted = false;
 let timerInterval;
+let score = 0;
+let highestScore = localStorage.getItem('highestScore') || 0;
+
+
 
 const levelDisplay = document.getElementById('level');
 const numberDisplay = document.getElementById('number-display');
 const userInput = document.getElementById('user-input');
+const currentScoreDisplay = document.getElementById('current-score');
+const highestScoreDisplay = document.getElementById('highest-score');
 const startBtn = document.getElementById('start-btn');
 const progressBarContainer = document.querySelector('.progress-bar-container');
 const progressBar = document.getElementById('progress-bar');
@@ -33,6 +39,18 @@ function startLevel() {
   levelDisplay.textContent = `Level: ${level}`;
   generateNumber();
   showNumber();
+}
+
+function updateScores() {
+  currentScoreDisplay.textContent = `Score: ${score}`;
+
+  // Update highest score if current score exceeds it
+  if (score > highestScore) {
+    highestScore = score;
+    localStorage.setItem('highestScore', highestScore);
+  }
+
+  highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 }
 
 //Generate number
@@ -98,6 +116,8 @@ function checkAnswer() {
     feedback.textContent = 'Correct!';
     feedback.style.color = 'green';
     level++;
+    score += 10;
+    updateScores();
     resetProgressBar();
     setTimeout(startLevel, 1000);
   } else {
@@ -123,10 +143,10 @@ function endGame(success) {
 }
 
 document.getElementById('menu-toggle').addEventListener('click', function () {
-  const dropdownMenu = document.getElementById('dropdown-menu') 
-  if (dropdownMenu.style.display === "none") {
-    dropdownMenu.style.display = "block";
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  if (!dropdownMenu.style.display || dropdownMenu.style.display === "none") {
+    dropdownMenu.style.display = "block"; // Show the menu
   } else {
-    dropdownMenu.style.display = "none";
+    dropdownMenu.style.display = "none"; // Hide the menu
   }
 });
