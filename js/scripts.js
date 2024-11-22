@@ -58,16 +58,27 @@ window.addEventListener('load', () => {
 });
 
 const music = document.getElementById('background-music');
-const playButton = document.getElementById('play-music');
-const pauseButton = document.getElementById('pause-music');
+const playButton = document.getElementById('volume-icon');
+// const playButton = document.getElementById('play-music');
+// const pauseButton = document.getElementById('pause-music');
+
+// playButton.addEventListener('click', () => {
+//   music.play();
+// });
+
+// pauseButton.addEventListener('click', () => {
+//   music.pause();
+// });
 
 playButton.addEventListener('click', () => {
-  music.play();
+  if (music.paused) {
+    music.play();
+    playButton.src = "./assets/images/theme/volume-up.svg";
+    playButton.alt = "Volume On";
+  } else {
+    music.pause();
+    playButton.src = "./assets/images/theme/volume-mute.svg";
+    playButton.alt = "Volume Off";
+  }
 });
-
-pauseButton.addEventListener('click', () => {
-  music.pause();
-});
-
-
 

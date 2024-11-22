@@ -1,8 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
 const currentScoreDisplay = document.getElementById('current-score');
 const highestScoreDisplay = document.getElementById('highest-score');
-const resetButton = document.getElementById('reset-score');
-const exitButton = document.getElementById('exit-button');
+const resetButton = document.getElementById('new-game');
 
 // Game state variables
 let hasFlippedCard = false;
@@ -124,6 +123,10 @@ function resetScores() {
 }
 
 function resetGame() {
+  score = 0;
+  moves = 0;
+  updateScores();
+  
   // Reset all cards and reinitialize the game
   cards.forEach((card) => {
     card.classList.remove('flip');
@@ -144,5 +147,4 @@ function goToMainMenu() {
 
 // Add event listeners
 cards.forEach((card) => card.addEventListener('click', flipCard));
-resetButton.addEventListener('click', resetScores);
-exitButton.addEventListener('click', goToMainMenu);
+resetButton.addEventListener('click', resetGame);
