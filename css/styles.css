@@ -4,7 +4,13 @@ body {
   overflow: hidden;
   filter: drop-shadow(0 0 10px white);
   animation: gradientAnimation 5s ease infinite;
+  overflow-x: hidden;
   font-family: "Mountains of Christmas";
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll; /* Enable vertical scrolling */
 }
 
 @keyframes gradientAnimation {
@@ -29,11 +35,30 @@ body {
 .col {
   color: white;
   text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;  
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   font-size: 50px;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 1024px) {
+  .col {
+    font-size: 2.5rem; /* Reduced font size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .col {
+    font-size: 2rem; /* Reduced font size for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .col {
+    font-size: 1.5rem; /* Reduced font size for mobile phones */
+  }
 }
 
 /* Snow container */
@@ -56,11 +81,46 @@ body {
   border-radius: 50%;
 }
 
+/* Responsive Snowflake Sizes */
+@media (max-width: 768px) {
+  .snow {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .snow {
+    width: 6px;
+    height: 6px;
+  }
+}
+
 @keyframes fall {
   100% {
     transform: translate(10vw, 30vh) scale(0.5);
   }
   to {
     transform: translate(5vw, 100vh) scale(0.5);
+  }
+}
+
+/* Layout and Padding Adjustments */
+@media (max-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.8rem;
+    padding: 10px;
   }
 }

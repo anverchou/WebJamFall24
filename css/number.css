@@ -1,41 +1,26 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+html, body {
   height: 100vh;
-  background: linear-gradient(135deg, #72b489, #e7e2a7);
-  animation: gradientAnimation 5s ease infinite;
+  width: 100%;
+  background-image: url("../assets/images/theme/number-background.svg");
+  background-size: cover;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.game-container{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 300px;
+.game-container {
+  margin: 6rem auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+  height: 45%;
+  width: 60%;
+  max-width: 900px;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 h1 {
-  margin: 0 0 20px;
+  font-family: "Mountains of Christmas", cursive;
+  text-shadow: 5px 5px 8px rgba(255, 255, 255, 0.7);
+  color: #1F4529;
+  /* margin: 0 0 20px; */
 }
 
 #number-display {
@@ -51,31 +36,36 @@ h1 {
 input {
   width: 90%;
   padding: 10px;
-  margin-top: 10px;
+  margin: 25px auto 10px auto;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 17px;
 }
 
 button {
-  background-color: #007bff;
+  background-color: #1F4529;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   color:white;
   border: none;
   padding: 10px 20px;
-  margin-top: 10px;
+  margin: 10px auto;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #47663B;
 }
 
 .progress-bar-container {
-  width: 100%;
-  height: 10px;
+  width: 90%;
+  padding-top: 3px;
+  margin: 10px auto;
+  height: 5%;
   background-color: #ddd;
   border-radius: 5px;
-  margin: 20px 0;
   overflow: hidden;
   position: relative;
 }
@@ -83,6 +73,206 @@ button:hover {
 #progress-bar {
   width: 0%;
   height: 100%;
-  background-color: #007bff;
+  background-color: #47663B;
   transition: width 0.1s linear;
+}
+
+/* Reset Button */
+#reset-score {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#reset-score:hover {
+  background-color: #e0a800;
+}
+
+/* Score Section */
+.score-container {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  gap: 50px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Mountains of Christmas', cursive;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  padding-top: 300px;
+}
+
+.score-container h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Button Container for Exit and Reset at Bottom */
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.nav div {
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 25px;
+}
+
+.nav {
+  width: 30px;
+  display: block;
+  margin: 1em 0 0 0;
+}
+
+.dropdown-menu-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+}
+
+.menu-button:hover {
+  background-color: transparent;
+}
+
+.bar {
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* First bar */
+.bar:nth-child(1) {
+  width: 27px;
+}
+
+/* Second bar */
+.bar:nth-child(2) {
+  width: 20px;
+}
+
+/* Third bar */
+.bar:nth-child(3) {
+  width: 25px;
+}
+
+.menu-button:hover .bar {
+  width: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+  .game-container {
+    width: 70%;
+    height: 50%;
+    font-size: 1.2rem;
+  }
+
+  .score-container {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game-container {
+    width: 80%;
+    height: 55%;
+    font-size: 1rem;
+  }
+
+  .score-container {
+    top: 7%;
+    font-size: 1.5rem !important;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-container {
+    width: 90%;
+    height: 60%;
+    font-size: 1.5rem !important;
+  }
+
+  .score-container {
+    top: 2%;
+    font-size: 2rem !important;
+    gap: 10px;
+  }
+
+  input {
+    font-size: 1.2rem !important;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 1rem !important;
+    padding: 6px 10px;
+  }
 }

@@ -4,26 +4,10 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #B19CD8, #D955B5);
-    animation: gradientAnimation 5s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    background-image: url('../assets/images/theme/verbal-background.svg');
+    background-size: cover;
+    /* animation: gradientAnimation 5s ease infinite; */
 }
 
 .game-container {
@@ -32,9 +16,21 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-}
+} 
+
+.game-container {
+    margin: 6rem auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+    height: 45%;
+    width: 60%;
+    max-width: 900px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
 h1 {
+    font-family: "Mountains of Christmas", cursive;
     margin: 0 0 20px;
 }
 
@@ -86,3 +82,163 @@ button:hover {
     background-color: #007bff;
     transition: width 0.1s linear;
 }
+
+.nav div {
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 25px;
+}
+
+.nav {
+  width: 30px;
+  display: block;
+  margin: 1em 0 0 0;
+}
+
+.dropdown-menu-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+}
+
+.menu-button:hover {
+  background-color: transparent;
+}
+
+.bar {
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* First bar */
+.bar:nth-child(1) {
+  width: 27px;
+}
+
+/* Second bar */
+.bar:nth-child(2) {
+  width: 20px;
+}
+
+/* Third bar */
+.bar:nth-child(3) {
+  width: 25px;
+}
+
+.menu-button:hover .bar {
+  width: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .game-container {
+      width: 70%;
+      height: 50%;
+      font-size: 1.2rem;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    input {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .game-container {
+      width: 80%;
+      height: 55%;
+      font-size: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    input {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    button {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .game-container {
+      width: 90%;
+      height: 60%;
+      font-size: 0.9rem;
+    }
+  
+    h1 {
+      font-size: 1.2rem;
+    }
+  
+    #number-display {
+      font-size: 1.5rem;
+    }
+  
+    input {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    button {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  
+    .progress-bar-container {
+      height: 8px;
+    }
+  }

@@ -4,20 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Number Memory</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/number.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>Number Memory Game</h1>
-    <p id="level">Level: 1</p>
-    <div id = "number-display" class="hidden"></div>
+  <div class="dropdown-menu-container">
+    <button id="menu-toggle" class="menu-button">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <div id="dropdown-menu" class="dropdown-menu hidden">
+      <a href="index.html" class="dropdown-item">Home</a>
+      <a href="animals.html" class="dropdown-item">Animal Game</a>
+      <a href="verbal.html" class="dropdown-item">Word Game</a>
+    </div>
+  </div>
+  <h1 class="display-3 fw-bold text-center py-5">Number Memory Game</h1>
+  <!-- Score Section -->
+  <div class="score-container" style="font-size: 3rem; text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);">
+    <h2 id="current-score">Score: 0</h2>
+    <h2 id="highest-score">Highest Score: 0</h2>
+</div>
+  <div id="instruction"></div>
+  <div class="game-container card text-center">
+    <p class="pt-5" id="level">Level: 1</p>
+    <p class="something" id="highest">Highest level: 0</p>
+    <div id="number-display" class="hidden"></div>
     <input type="text" id="user-input" placeholder="Enter the number.." class="hidden">
     <button id="start-btn">Start Game</button>
     <div class="progress-bar-container hidden">
       <div id="progress-bar"></div>
     </div>
-    <p id="feedback"></p>
+    <p class="pt-2" id="feedback" style="font-size: 1.2rem;"></p>
   </div>
+
   <script src="./js/number.js"></script>
 </body>
 </html>
