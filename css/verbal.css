@@ -77,6 +77,32 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Reset Button */
+#new-game {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#new-game:hover {
+  background-color: #e0a800;
+}
+
+/* Button Container for Exit and Reset at Bottom */
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
 /* Nav bar */
 .nav div {
   height: 4px;
