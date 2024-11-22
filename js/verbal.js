@@ -2,6 +2,8 @@ let score = 0;
 let lives = 3;
 let currentWord = "";
 let gameStarted = false;
+let highestScore = localStorage.getItem('verbalHighestScore') || 0;
+
 const appearedWords = new Set();
 
 const wordDisplay = document.getElementById("word-display");
@@ -9,7 +11,11 @@ const startBtn = document.getElementById("start-btn");
 const seenBtn = document.getElementById("seen-btn");
 const newBtn = document.getElementById("new-btn");
 const livesDisplay = document.getElementById("lives");
-const scoreDisplay = document.getElementById("current-score");
+const currentScoreDisplay = document.getElementById('current-score');
+const highestScoreDisplay = document.getElementById('highest-score');
+
+highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
+
 
 // Button to Start game
 startBtn.addEventListener("click", () => {
@@ -33,8 +39,9 @@ function startGame() {
 // Display the level
 function startLevel() {
   //   feedback.textContent = '';
-  scoreDisplay.textContent = `Score: ${score}`;
+  currentScoreDisplay.textContent = `Score: ${score}`;
   livesDisplay.textContent = `Lives: ${lives}`;
+  updateScores();
   // Lose the game
   if (lives == 0) {
     newBtn.classList.add("hidden");
@@ -44,6 +51,7 @@ function startLevel() {
     startBtn.classList.remove("hidden");
     gameStarted = false;
   } else {
+    // updateScores();
     generateWord();
     showWord();
   }
@@ -57,17 +65,28 @@ function generateWord() {
 function showWord() {
   wordDisplay.textContent = currentWord;
   wordDisplay.classList.remove("hidden");
-
 }
+
+function updateScores() {
+  currentScoreDisplay.textContent = `Score: ${score}`;
+
+  // Update highest score if current score exceeds it
+  if (score > highestScore) {
+    highestScore = score;
+    localStorage.setItem('verbalHighestScore', highestScore);
+    highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
+  }
+
+};
 
 seenBtn.addEventListener("click", () => {
   if (!appearedWords.has(currentWord)) {
     appearedWords.add(currentWord);
     lives--;
-    scoreDisplay.textContent = `Score: ${score}`;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   } else {
-    score ++;
-    scoreDisplay.textContent = `Score: ${score}`;
+    score += 10;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   }
 
   startLevel();
@@ -78,8 +97,8 @@ newBtn.addEventListener("click", () => {
     lives --;
   } else {
     appearedWords.add(currentWord);
-    score++;
-    //scoreDisplay.textContent = `Score: ${score}`;
+    score += 10;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   }
   
   startLevel();

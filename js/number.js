@@ -3,9 +3,7 @@ let currentNumber = '';
 let gameStarted = false;
 let timerInterval;
 let score = 0;
-let highestScore = localStorage.getItem('highestScore') || 0;
-
-
+let highestScore = localStorage.getItem('numberHighestScore') || 0;
 
 const levelDisplay = document.getElementById('level');
 const numberDisplay = document.getElementById('number-display');
@@ -16,6 +14,8 @@ const startBtn = document.getElementById('start-btn');
 const progressBarContainer = document.querySelector('.progress-bar-container');
 const progressBar = document.getElementById('progress-bar');
 const feedback = document.getElementById('feedback');
+
+highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 
 //Button to Start game
 startBtn.addEventListener('click', () => {
@@ -47,13 +47,13 @@ function updateScores() {
   // Update highest score if current score exceeds it
   if (score > highestScore) {
     highestScore = score;
-    localStorage.setItem('highestScore', highestScore);
+    localStorage.setItem('numberHighestScore', highestScore);
   }
 
   highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 }
 
-//Generate number
+// Generate number
 function generateNumber() {
   currentNumber = '';
   for (let i = 0; i < level; i++) {
@@ -71,12 +71,12 @@ function showNumber() {
     userInput.classList.remove('hidden');
     userInput.value = '';
     userInput.focus();
-    //Timer to showNumber
+    // Timer to showNumber
     startTimer();
   }, 500 + level * 500);
 }
 
-//ProgressBar timer
+// ProgressBar timer
 function startTimer() {
   let time = 3000 + level * 200;
   let elapsedTime = 0;
@@ -89,19 +89,19 @@ function startTimer() {
 
     if (elapsedTime >= time) {
       clearInterval(timerInterval);
-      //Check answer if user has number inside box but forgets to enter
+      // Check answer if user has number inside box but forgets to enter
       checkAnswer();
     }
   }, 100);
 }
 
-//Reset progress Bar
+// Reset progress Bar
 function resetProgressBar() {
   clearInterval(timerInterval);
   progressBar.style.width = '0%';
 }
 
-//Allow the user to press Enter to submit early
+// Allow the user to press Enter to submit early
 userInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     clearInterval(timerInterval); 
