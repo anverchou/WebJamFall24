@@ -133,6 +133,7 @@ button:hover {
   width: 30px;
   height: 24px;
   padding: 0;
+  box-shadow: none;
 }
 
 .menu-button:hover {
@@ -169,26 +170,44 @@ button:hover {
   display: none;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 40px;
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
   left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.dropdown-item {
-  display: block;
-  padding: 5px 10px;
-  color: #333;
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
+/* When you mouse over the navigation links, change their color */
 .dropdown-item:hover {
-  background-color: #f0f0f0;
+  background-color: #818181;
+  color: #f1f1f1;
+  
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 /* Media Queries for Responsiveness */
