@@ -28,6 +28,7 @@ h1 {
   margin: 0 25px;
 }
 
+/* Game Section */
 .game-container {
     margin: 6rem auto;
     border-radius: 10px;
@@ -52,14 +53,6 @@ h1 {
     display: none;
 }
 
-input {
-    width: 90%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 button {
     background-color: #2B3467;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -75,6 +68,18 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.difficulty {
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  width: 20%;
+}
+
+.difficulty button{
+  font-size: 1rem;
+  width: 100%;
 }
 
 /* Reset Button */
@@ -242,11 +247,6 @@ button:hover {
       font-size: 1.5rem;
     }
   
-    input {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  
     button {
       font-size: 0.8rem;
       padding: 8px 15px;
@@ -268,14 +268,13 @@ button:hover {
       font-size: 1.5rem;
     }
   
-    input {
-      font-size: 0.8rem;
-      padding: 6px;
-    }
-  
     button {
       font-size: 0.8rem;
       padding: 6px 10px;
+    }
+
+    .difficulty button {
+      font-size: 0.6rem;
     }
 
   }

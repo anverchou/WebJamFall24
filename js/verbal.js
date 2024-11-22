@@ -1,44 +1,46 @@
 let score = 0;
-let lives = 3;
+let lives;
 let currentWord = "";
 let gameStarted = false;
 let highestScore = localStorage.getItem('verbalHighestScore') || 0;
 
 const appearedWords = new Set();
 
-const wordDisplay = document.getElementById("word-display");
-const startBtn = document.getElementById("start-btn");
+const easyBtn = document.getElementById("easy-btn");
+const mediumBtn = document.getElementById("medium-btn");
+const hardBtn = document.getElementById("hard-btn");
+const livesDisplay = document.getElementById("lives");
+
+const replayBtn = document.getElementById("replay-btn");
 const seenBtn = document.getElementById("seen-btn");
 const newBtn = document.getElementById("new-btn");
-const livesDisplay = document.getElementById("lives");
+
+const wordDisplay = document.getElementById("word-display");
 const currentScoreDisplay = document.getElementById('current-score');
 const highestScoreDisplay = document.getElementById('highest-score');
 
 highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 
-
 // Button to Start game
-startBtn.addEventListener("click", () => {
+easyBtn.addEventListener("click", () => {
   if (!gameStarted) {
-    lives = 3;
+    lives = 10;
     wordDisplay.style.color = "black";
-    startBtn.classList.add("hidden");
-    seenBtn.classList.remove("hidden");
-    newBtn.classList.remove("hidden");
+    replayBtn.classList.add("hidden");
     startGame();
   }
 });
 
 function startGame() {
+  seenBtn.classList.remove("hidden");
+  newBtn.classList.remove("hidden");
   gameStarted = true;
   score = 0;
-  //   feedback.textContent = '';
   startLevel();
 }
 
 // Display the level
 function startLevel() {
-  //   feedback.textContent = '';
   currentScoreDisplay.textContent = `Score: ${score}`;
   livesDisplay.textContent = `Lives: ${lives}`;
   updateScores();
@@ -50,7 +52,7 @@ function startLevel() {
     wordDisplay.textContent = "You ran out of lives!";
     wordDisplay.style.color = 'red';
 
-    startBtn.classList.remove("hidden");
+    replayBtn.classList.remove("hidden");
     gameStarted = false;
   } else {
     // updateScores();
@@ -97,7 +99,6 @@ seenBtn.addEventListener("click", () => {
 
 newBtn.addEventListener("click", () => {
   if (appearedWords.has(currentWord)) {
-
     lives --;
   } else {
     appearedWords.add(currentWord);
