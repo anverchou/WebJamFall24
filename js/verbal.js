@@ -46,8 +46,10 @@ function startLevel() {
   if (lives == 0) {
     newBtn.classList.add("hidden");
     seenBtn.classList.add("hidden");
+
     wordDisplay.textContent = "You ran out of lives!";
     wordDisplay.style.color = 'red';
+
     startBtn.classList.remove("hidden");
     gameStarted = false;
   } else {
@@ -82,6 +84,7 @@ function updateScores() {
 seenBtn.addEventListener("click", () => {
   if (!appearedWords.has(currentWord)) {
     appearedWords.add(currentWord);
+
     lives--;
     // currentScoreDisplay.textContent = `Score: ${score}`;
   } else {
@@ -94,6 +97,7 @@ seenBtn.addEventListener("click", () => {
 
 newBtn.addEventListener("click", () => {
   if (appearedWords.has(currentWord)) {
+
     lives --;
   } else {
     appearedWords.add(currentWord);
