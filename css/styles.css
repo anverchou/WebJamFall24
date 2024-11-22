@@ -157,3 +157,29 @@ footer {
     height: 4vw;
   }
 }
+
+#github-icon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+#github-icon a {
+  color: white;
+  text-decoration: none;
+}
+
+#github-icon a:hover {
+  color: #ddd; 
+}
+
+@media screen and (max-width: 767px) {
+  #github-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  #github-icon a i {
+    font-size: 1.5em;
+  }
+}
