@@ -200,13 +200,14 @@ button:hover {
   color: #818181;
   display: block;
   transition: 0.3s;
+  text-align: left;
 }
 
 /* When you mouse over the navigation links, change their color */
 .dropdown-item:hover {
   background-color: #818181;
   color: #f1f1f1;
-  
+
 }
 
 /* Position and style the close button (top right corner) */
