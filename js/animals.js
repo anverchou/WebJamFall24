@@ -15,6 +15,15 @@ let highestScore = localStorage.getItem('highestScore') || 0;
 // Initialize score displays
 updateScores();
 
+document.getElementById('menu-toggle').addEventListener('click', function () {
+  const dropdownMenu = document.getElementById('dropdown-menu') 
+  if (dropdownMenu.style.display === "none") {
+    dropdownMenu.style.display = "block";
+  } else {
+    dropdownMenu.style.display = "none";
+  }
+});
+
 // Game functions
 function flipCard() {
   if (lockBoard) return; // Prevent interaction during unflip delay
