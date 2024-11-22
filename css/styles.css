@@ -27,10 +27,16 @@ body, html {
   }
 }
 
+
 .volume-icon {
   width: 8%;
+  max-width: 90px;
   height: auto;
-  max-width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 footer {
