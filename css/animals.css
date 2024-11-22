@@ -11,10 +11,10 @@
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 
@@ -74,232 +74,234 @@ body {
 }
 
 .fa-snowflake {
-color: #ecf2f8;
+  color: #ecf2f8;
 }
 
 .snow {
-width: 100%;
-height: 100%;
-position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .snowflake {
-animation-name: fall, shake;
-animation-duration: 10s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 200px;
-z-index: 7;
-filter: blur(0.5px);
+  animation-name: fall, shake;
+  animation-duration: 10s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 200px;
+  z-index: 7;
+  filter: blur(0.5px);
 }
 
 .snowflake1 {
-animation-name: fall, shake;
-animation-duration: 10s, 3s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 500px;
-top: -100px;
-animation-delay: 1s, 1s;
-z-index: 7;
-filter: blur(0.5px);
+  animation-name: fall, shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 500px;
+  top: -100px;
+  animation-delay: 1s, 1s;
+  z-index: 7;
+  filter: blur(0.5px);
 }
 
 .snowflake2 {
-animation-name: fall, shake;
-animation-duration: 8s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 20px;
-top: -100px;
-animation-delay: 2s, 2s;
-z-index: 7;
-filter: blur(0.5px);
+  animation-name: fall, shake;
+  animation-duration: 8s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  animation-delay: 2s, 2s;
+  z-index: 7;
+  filter: blur(0.5px);
 }
 
 .snowflake3 {
-animation-name: fall, shake;
-animation-duration: 9s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-right: 170px;
-top: -100px;
-animation-delay: 3s, 5s;
-z-index: 5;
-filter: blur(0.7px);
+  animation-name: fall, shake;
+  animation-duration: 9s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  right: 170px;
+  top: -100px;
+  animation-delay: 3s, 5s;
+  z-index: 5;
+  filter: blur(0.7px);
 }
 
 .snowflake4 {
-animation-name: fall, shake;
-animation-duration: 15s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-right: 430px;
-top: -100px;
-animation-delay: 4s, 4s;
-z-index: 5;
+  animation-name: fall, shake;
+  animation-duration: 15s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  right: 430px;
+  top: -100px;
+  animation-delay: 4s, 4s;
+  z-index: 5;
 }
 
 .snowflake5 {
-animation-name: fall, shake;
-animation-duration: 15s, 4s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 500px;
-top: -100px;
-animation-delay: 6s, 2s;
-font-size: 2rem;
-z-index: 6;
-filter: blur(0.5px);
+  animation-name: fall, shake;
+  animation-duration: 15s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 500px;
+  top: -100px;
+  animation-delay: 6s, 2s;
+  font-size: 2rem;
+  z-index: 6;
+  filter: blur(0.5px);
 }
 
 .snowflake6 {
-animation-name: fall, shake;
-animation-duration: 12s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 75px;
-top: -100px;
-animation-delay: 3.2s, 2s;
-font-size: 2rem;
-z-index: 6;
+  animation-name: fall, shake;
+  animation-duration: 12s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 75px;
+  top: -100px;
+  animation-delay: 3.2s, 2s;
+  font-size: 2rem;
+  z-index: 6;
 }
 
 .snowflake7 {
-animation-name: fall, shake;
-animation-duration: 11s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 650px;
-top: -100px;
-animation-delay: 7.2s, 1s;
-z-index: 7;
+  animation-name: fall, shake;
+  animation-duration: 11s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 650px;
+  top: -100px;
+  animation-delay: 7.2s, 1s;
+  z-index: 7;
 }
 
 .snowflake8 {
-animation-name: fall, shake;
-animation-duration: 12s, 4s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 820px;
-top: -100px;
-animation-delay: 4s, 2s;
-font-size: 2rem;
-z-index: 5;
-filter: blur(0.5px);
+  animation-name: fall, shake;
+  animation-duration: 12s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 820px;
+  top: -100px;
+  animation-delay: 4s, 2s;
+  font-size: 2rem;
+  z-index: 5;
+  filter: blur(0.5px);
 }
 
 .snowflake9 {
-animation-name: fall, shake;
-animation-duration: 12s, 4s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 170px;
-top: -100px;
-animation-delay: 5s, 2s;
-font-size: 2rem;
-z-index: 5;
-filter: blur(0.3px);
+  animation-name: fall, shake;
+  animation-duration: 12s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 170px;
+  top: -100px;
+  animation-delay: 5s, 2s;
+  font-size: 2rem;
+  z-index: 5;
+  filter: blur(0.3px);
 }
 
 .snowflake10 {
-animation-name: fall, shake;
-animation-duration: 15s, 9s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 350px;
-top: -100px;
-animation-delay: 2.7s, 2s;
-font-size: 3rem;
-z-index: 7;
+  animation-name: fall, shake;
+  animation-duration: 15s, 9s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 350px;
+  top: -100px;
+  animation-delay: 2.7s, 2s;
+  font-size: 3rem;
+  z-index: 7;
 }
 
 .snowflake11 {
-animation-name: fall, shake;
-animation-duration: 12s, 7s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-right: 400px;
-top: -100px;
-animation-delay: 0.5s, 2s;
-font-size: 3rem;
-z-index: 7;
+  animation-name: fall, shake;
+  animation-duration: 12s, 7s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  right: 400px;
+  top: -100px;
+  animation-delay: 0.5s, 2s;
+  font-size: 3rem;
+  z-index: 7;
 }
 
 .snowflake12 {
-/*small*/
-animation-name: fall, shake;
-animation-duration: 12s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-left: 470px;
-top: -100px;
-animation-delay: 5s, 2s;
-z-index: 7;
-filter: blur(0.9px);
+  /*small*/
+  animation-name: fall, shake;
+  animation-duration: 12s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  left: 470px;
+  top: -100px;
+  animation-delay: 5s, 2s;
+  z-index: 7;
+  filter: blur(0.9px);
 }
 
 .snowflake13 {
-/*small*/
-animation-name: fall, shake;
-animation-duration: 10s, 5s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-right: 220px;
-top: -100px;
-animation-delay: 1s, 2s;
-z-index: 7;
-filter: blur(0.6px);
+  /*small*/
+  animation-name: fall, shake;
+  animation-duration: 10s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  right: 220px;
+  top: -100px;
+  animation-delay: 1s, 2s;
+  z-index: 7;
+  filter: blur(0.6px);
 }
 
 .snowflake14 {
-/*small*/
-animation-name: fall, shake;
-animation-duration: 9s, 4s;
-animation-timing-function: linear, ease-in-out;
-animation-iteration-count: infinite, infinite;
-position: absolute;
-right: 140px;
-top: -100px;
-animation-delay: 2s, 2s;
-z-index: 7;
-filter: blur(0.5px);
+  /*small*/
+  animation-name: fall, shake;
+  animation-duration: 9s, 4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: absolute;
+  right: 140px;
+  top: -100px;
+  animation-delay: 2s, 2s;
+  z-index: 7;
+  filter: blur(0.5px);
 }
 
 @keyframes fall {
-0% {
-  top: -10%;
-}
+  0% {
+    top: -10%;
+  }
 
-100% {
-  top: 100%;
-}
+  100% {
+    top: 100%;
+  }
 }
 
 @keyframes shake {
-0% {
-  transform: translatex(0);
-}
-50% {
-  transform: translatex(50px);
-}
-100% {
-  transform: translatex(0);
-}
+  0% {
+    transform: translatex(0);
+  }
+
+  50% {
+    transform: translatex(50px);
+  }
+
+  100% {
+    transform: translatex(0);
+  }
 }
 
 /* Score Section */
@@ -309,26 +311,26 @@ filter: blur(0.5px);
   left: 50%;
   display: flex;
   transform: translate(-50%, -50%);
-  justify-content: center; 
+  justify-content: center;
   gap: 50px;
   color: #ffffff;
-  font-size: 2rem; 
-  font-family: 'Mountains of Christmas', cursive; 
-  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7); 
+  font-size: 2rem;
+  font-family: 'Mountains of Christmas', cursive;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
   font-weight: bold;
 }
 
 .score-container h2 {
   margin: 0;
   padding: 0;
-  font-size: inherit; 
+  font-size: inherit;
 }
 
 /* Reset Button */
 #reset-score {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #ffc107; 
+  background-color: #ffc107;
   color: black;
   border: none;
   border-radius: 5px;
@@ -338,14 +340,14 @@ filter: blur(0.5px);
 }
 
 #reset-score:hover {
-  background-color: #e0a800; 
+  background-color: #e0a800;
 }
 
 /* Exit Button */
 #exit-button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #B91F1C; 
+  background-color: #B91F1C;
   color: white;
   border: none;
   border-radius: 5px;
@@ -355,14 +357,14 @@ filter: blur(0.5px);
 }
 
 #exit-button:hover {
-  background-color: #D86558; 
+  background-color: #D86558;
 }
 
 /* Button Container for Exit and Reset at Bottom */
 .button-container {
   position: absolute;
-  bottom: 20px; 
-  right: 20px;  
+  bottom: 20px;
+  right: 20px;
   display: flex;
   gap: 10px;
 }

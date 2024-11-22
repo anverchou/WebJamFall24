@@ -10,17 +10,23 @@
   <link rel="stylesheet" href="./css/number.css">
 </head>
 <body>
-  <div class="game-container card">
-    <h1>Number Memory Game</h1>
-    <p class=" " id="level">Level: 1</p>
-    <p id="level">Highest level: 0</p>
-    <div id = "number-display" class="hidden"></div>
+  <h1 class="display-3 fw-bold text-center py-5">Number Memory Game</h1>
+  <div id="instruction"></div>
+  <div class="game-container card text-center">
+    <p class="pt-5" id="level">Level: 1</p>
+    <p class="something" id="highest">Highest level: 0</p>
+    <div id="number-display" class="hidden"></div>
     <input type="text" id="user-input" placeholder="Enter the number.." class="hidden">
     <button id="start-btn">Start Game</button>
     <div class="progress-bar-container hidden">
       <div id="progress-bar"></div>
     </div>
-    <p id="feedback"></p>
+    <p class="pt-2" id="feedback" style="font-size: 1.2rem;"></p>
+  </div>
+
+  <div class="button-container">
+    <button id="reset-score" class="btn btn-warning">Reset Score</button>
+    <button id="exit-button" class="btn btn-danger">Exit to Main Menu</button>
   </div>
   <script src="./js/number.js"></script>
 </body>
