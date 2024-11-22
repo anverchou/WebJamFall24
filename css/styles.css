@@ -8,7 +8,7 @@ body, html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   font-family: "Mountains of Christmas", cursive;
   animation: gradientAnimation 5s ease infinite;
-  filter: drop-shadow(10 10 10px white);
+  filter: drop-shadow(0 0 10px white);
   position: relative;
   cursor: url('./assets/images/theme/animals.svg'), auto; 
   cursor: url('./assets/images/theme/numbers.svg'), auto; 
