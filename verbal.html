@@ -13,24 +13,32 @@
   <link rel="stylesheet" href="./css/verbal.css">
   <audio autoplay loop src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio>
 </head>
-
-<body>
-  <!-- Dropdown navbar -->
-  <div class="dropdown-menu-container">
-    <button id="menu-toggle" class="menu-button" onclick="openNav()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </button>
-    
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="index.html" class="dropdown-item">Home</a>
-      <a href="animals.html" class="dropdown-item">Animals Game</a>
-      <a href="number.html" class="dropdown-item">Number Game</a>
-    </div>
+<div class="dropdown-menu-container">
+  <button id="menu-toggle" class="menu-button" onclick="openNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </button>
+  
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html" class="dropdown-item">Home</a>
+    <a href="animals.html" class="dropdown-item">Animals Game</a>
+    <a href="number.html" class="dropdown-item">Number Game</a>
   </div>
+</div>
+<body>
 
+  <!-- Music Section-->
+  <audio id="background-music" loop autoplay>
+    <source src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div>
+    <img src="./assets/images/theme/volume-up.svg" alt="Volume On" id="volume-icon" class="volume-icon">
+  </div>
+  
   <h1 class="display-3 fw-bold pt-5">Verbal Memory Game</h1>
 
   <!-- Score Section -->

@@ -11,10 +11,9 @@
     href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/number.css">
-  <audio autoplay loop src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio>
 </head>
 
-<body style="overflow:hidden">
+<body>
   <div class="dropdown-menu-container">
     <button id="menu-toggle" class="menu-button" onclick="openNav()">
       <div class="bar"></div>
@@ -44,7 +43,7 @@
   <div class="game-container card text-center">
     <p class="pt-5" id="level">Level: 1</p>
     <div id="number-display" class="hidden"></div>
-    <input type="text" id="user-input" placeholder="Enter the number.." class="hidden">
+    <input type="text" id="user-input" autocomplete="off" placeholder="Enter the number.." class="hidden">
     <button id="start-btn">Start Game</button>
     <div class="progress-bar-container hidden">
       <div id="progress-bar"></div>

@@ -77,3 +77,20 @@ playButton.addEventListener('click', () => {
     playButton.alt = "Volume Off";
   }
 });
+
+// Select all game boards
+const gameBoards = document.querySelectorAll('.cover');
+
+// Add hover effect using JavaScript
+gameBoards.forEach((board) => {
+  board.addEventListener('mouseenter', () => {
+    board.style.transform = 'translateY(-20px) scale(1.05)';
+    board.style.filter = 'brightness(1.2)';
+  });
+
+  board.addEventListener('mouseleave', () => {
+    board.style.transform = 'translateY(0) scale(1)';
+    board.style.filter = 'brightness(1)';
+  });
+});
+
