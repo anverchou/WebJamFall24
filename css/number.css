@@ -5,8 +5,29 @@ html, body {
   background-size: cover;
 }
 
+h1 {
+  font-family: "Mountains of Christmas", cursive;
+  text-shadow: 5px 5px 8px whitesmoke;
+  color: #1F4529;
+}
+
+/* Score Section */
+.score-container {
+  text-align: center;
+  color: #493628;
+  font-family: 'Mountains of Christmas', cursive;
+  text-shadow: 5px 5px 8px whitesmoke;
+  font-weight: bold;
+}
+
+.score-container h2 {
+  display: inline-block;
+  margin: 0 25px;
+}
+
+/* Game Section */
 .game-container {
-  margin: 6rem auto;
+  margin: 50px auto;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
   height: 45%;
@@ -14,13 +35,6 @@ html, body {
   max-width: 900px;
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-h1 {
-  font-family: "Mountains of Christmas", cursive;
-  text-shadow: 5px 5px 8px rgba(255, 255, 255, 0.7);
-  color: #1F4529;
-  /* margin: 0 0 20px; */
 }
 
 #number-display {
@@ -42,6 +56,7 @@ input {
   font-size: 17px;
 }
 
+/* Button */
 button {
   background-color: #1F4529;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -59,6 +74,7 @@ button:hover {
   background-color: #47663B;
 }
 
+/* Progress Bar */
 .progress-bar-container {
   width: 90%;
   padding-top: 3px;
@@ -77,55 +93,7 @@ button:hover {
   transition: width 0.1s linear;
 }
 
-/* Reset Button */
-#reset-score {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #ffc107;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-}
-
-#reset-score:hover {
-  background-color: #e0a800;
-}
-
-/* Score Section */
-.score-container {
-  position: absolute;
-  top: 6%;
-  left: 50%;
-  display: flex;
-  transform: translate(-50%, -50%);
-  justify-content: center;
-  gap: 50px;
-  color: #ffffff;
-  font-size: 2rem;
-  font-family: 'Mountains of Christmas', cursive;
-  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  padding-top: 300px;
-}
-
-.score-container h2 {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-}
-
-/* Button Container for Exit and Reset at Bottom */
-.button-container {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
+/* Navbar dropdown */
 .nav div {
   height: 4px;
   background-color: white;
@@ -221,10 +189,6 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  .score-container {
-    font-size: 1.8rem;
-  }
-
   button {
     font-size: 1rem;
   }
@@ -237,9 +201,8 @@ button:hover {
     font-size: 1rem;
   }
 
-  .score-container {
-    top: 7%;
-    font-size: 1.5rem !important;
+  .score-container h2 {
+    margin: 0 10px;
   }
 
   input {
@@ -258,12 +221,12 @@ button:hover {
     width: 90%;
     height: 60%;
     font-size: 1.5rem !important;
+    margin-top: 15px;
   }
 
-  .score-container {
-    top: 2%;
-    font-size: 2rem !important;
-    gap: 10px;
+  .score-container h2 {
+    font-size: 25px !important;
+    margin: 0 10px;
   }
 
   input {

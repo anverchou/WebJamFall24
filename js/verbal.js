@@ -9,11 +9,13 @@ const startBtn = document.getElementById("start-btn");
 const seenBtn = document.getElementById("seen-btn");
 const newBtn = document.getElementById("new-btn");
 const livesDisplay = document.getElementById("lives");
-const scoreDisplay = document.getElementById("score");
+const scoreDisplay = document.getElementById("current-score");
 
 // Button to Start game
 startBtn.addEventListener("click", () => {
   if (!gameStarted) {
+    lives = 3;
+    wordDisplay.style.color = "black";
     startBtn.classList.add("hidden");
     seenBtn.classList.remove("hidden");
     newBtn.classList.remove("hidden");
@@ -35,10 +37,12 @@ function startLevel() {
   livesDisplay.textContent = `Lives: ${lives}`;
   // Lose the game
   if (lives == 0) {
-    newBtn.style.display = "none";
-    seenBtn.style.display = "none";
+    newBtn.classList.add("hidden");
+    seenBtn.classList.add("hidden");
     wordDisplay.textContent = "You ran out of lives!";
     wordDisplay.style.color = 'red';
+    startBtn.classList.remove("hidden");
+    gameStarted = false;
   } else {
     generateWord();
     showWord();

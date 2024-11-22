@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verbal Memory</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/verbal.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verbal Memory</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/verbal.css">
 </head>
+
 <body>
-    <div class="dropdown-menu-container">
-        <button id="menu-toggle" class="menu-button">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </button>
-        <div id="dropdown-menu" class="dropdown-menu hidden">
-          <a href="index.html" class="dropdown-item">Home</a>
-          <a href="animals.html" class="dropdown-item">Animal Game</a>
-          <a href="number.html" class="dropdown-item">Number Game</a>
-        </div>
-      </div>
-    <h1 class="display-3 fw-bold pt-5">Verbal Memory Game</h1>
-    <div class="game-container card">
-        <div class="row my-4">
-            <div class="col mx-3">
-                <p id="lives">Lives: 3</p>
-            </div>
-            <div class="col mx-3">
-                <p id="score">Score: 0</p>
-            </div>
-        </div>
-        <div id ="word-display" class="hidden"></div>
-        <button id="start-btn">Start Game</button>
-        <button id="seen-btn" class="hidden">Seen</button>
-        <button id="new-btn" class="hidden">New</button>
-        <p id="feedback"></p>
-      </div>
-      <script src="./js/verbal.js"></script>
+  <!-- Dropdown navbar -->
+  <div class="dropdown-menu-container">
+    <button id="menu-toggle" class="menu-button">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <div id="dropdown-menu" class="dropdown-menu hidden">
+      <a href="index.html" class="dropdown-item">Home</a>
+      <a href="animals.html" class="dropdown-item">Animal Game</a>
+      <a href="number.html" class="dropdown-item">Number Game</a>
+    </div>
+  </div>
+
+  <h1 class="display-3 fw-bold pt-5">Verbal Memory Game</h1>
+
+  <!-- Score Section -->
+  <div class="score-container">
+    <h2 class="display-5" id="current-score">Score: 0</h2>
+    <h2 class="display-5" id="highest-score">Highest Score: 0</h2>
+  </div>
+
+  <!-- Game Section -->
+  <div class="game-container card">
+    <p class="my-4" id="lives">Lives: 3</p>
+    <div id="word-display" class="hidden"></div>
+    <button id="start-btn">Start Game</button>
+    <div class="answer">
+      <button id="seen-btn" class="hidden mb-md-0">Seen</button>
+      <button id="new-btn" class="hidden mb-md-0">New</button>
+    </div>
+    <p id="feedback"></p>
+  </div>
+  <script src="./js/verbal.js"></script>
 </body>
+
 </html>
