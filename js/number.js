@@ -122,6 +122,7 @@ function checkAnswer() {
     setTimeout(startLevel, 1000);
   } else {
     feedback.textContent = `Game Over! Correct Number: ${currentNumber}`;
+    currentNumber = '';
     feedback.style.color = 'red';
     endGame(false);
   }
