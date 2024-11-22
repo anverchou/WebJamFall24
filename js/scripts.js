@@ -1,3 +1,4 @@
+// Snow Section
 const snowContainer = document.querySelector('.snow-container');
 const totalSnowflakes = 600;
 
@@ -48,6 +49,25 @@ for (let i = 0; i < totalSnowflakes; i++) {
   snowContainer.appendChild(snowflake);
 }
 
+// Music Section
+window.addEventListener('load', () => {
+  const music = document.getElementById('background-music');
+  music.play().catch((error) => {
+    console.log('Audio playback was prevented by the browser:', error);
+  });
+});
+
+const music = document.getElementById('background-music');
+const playButton = document.getElementById('play-music');
+const pauseButton = document.getElementById('pause-music');
+
+playButton.addEventListener('click', () => {
+  music.play();
+});
+
+pauseButton.addEventListener('click', () => {
+  music.pause();
+});
 
 
 
