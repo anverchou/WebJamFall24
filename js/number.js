@@ -133,7 +133,7 @@ function endGame(success) {
     feedback.style.color = 'green';
   } else {
     feedback.textContent = `Game Over! Correct Number: ${currentNumber}`;
-    currentNumber = '';
+    currentNumber += ' ';
     feedback.style.color = 'red';
   }
   gameStarted = false;
