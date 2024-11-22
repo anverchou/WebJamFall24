@@ -19,18 +19,20 @@ h1 {
   text-align: center;
   color: #ffffff;
   font-family: 'Mountains of Christmas', cursive;
-  text-shadow: 0px 0px 8px whitesmoke;
+  text-shadow: 5px 5px 8px whitesmoke;
   font-weight: bold;
 }
 
 .score-container h2 {
   display: inline-block;
   margin: 0 25px;
+  position: relative;
+  top: 20px;
 }
 
 /* Game Section */
 .game-container {
-    margin: 6rem auto;
+    margin: 50px auto;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
     height: 45%;
