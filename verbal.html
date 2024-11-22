@@ -11,19 +11,22 @@
     href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/verbal.css">
+  <audio autoplay loop src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio>
 </head>
 
 <body>
   <!-- Dropdown navbar -->
   <div class="dropdown-menu-container">
-    <button id="menu-toggle" class="menu-button">
+    <button id="menu-toggle" class="menu-button" onclick="openNav()">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </button>
-    <div id="dropdown-menu" class="dropdown-menu hidden">
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html" class="dropdown-item">Home</a>
-      <a href="animals.html" class="dropdown-item">Animal Game</a>
+      <a href="animals.html" class="dropdown-item">Animals Game</a>
       <a href="number.html" class="dropdown-item">Number Game</a>
     </div>
   </div>
@@ -37,15 +40,15 @@
   </div>
 
   <!-- Game Section -->
-  <div class="game-container card">
-    <p class="my-4" id="lives">Lives: 3</p>
-    <div id="word-display" class="hidden"></div>
-    <button id="start-btn">Start Game</button>
+  <div class="game-container card text-center">
+    <p class="my-4" id="lives" style="position: relative; top:30px;">Lives: 3</p>
+
+    <div id="word-display" class="hidden" ></div>
+    <button id="start-btn" style="position: relative; top:30px;">Start Game</button>
     <div class="answer">
       <button id="seen-btn" class="hidden mb-md-0">Seen</button>
       <button id="new-btn" class="hidden mb-md-0">New</button>
     </div>
-    <p id="feedback"></p>
   </div>
   <script src="./js/verbal.js"></script>
 </body>

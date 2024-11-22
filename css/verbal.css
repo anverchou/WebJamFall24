@@ -19,17 +19,19 @@ h1 {
   text-align: center;
   color: #ffffff;
   font-family: 'Mountains of Christmas', cursive;
-  text-shadow: 0px 0px 8px whitesmoke;
+  text-shadow: 5px 5px 8px whitesmoke;
   font-weight: bold;
 }
 
 .score-container h2 {
   display: inline-block;
   margin: 0 25px;
+  position: relative;
+  top: 20px;
 }
 
 .game-container {
-    margin: 6rem auto;
+    margin: 50px auto;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
     height: 45%;
@@ -77,6 +79,32 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Reset Button */
+#new-game {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#new-game:hover {
+  background-color: #e0a800;
+}
+
+/* Button Container for Exit and Reset at Bottom */
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
 /* Nav bar */
 .nav div {
   height: 4px;
@@ -107,6 +135,7 @@ button:hover {
   width: 30px;
   height: 24px;
   padding: 0;
+  box-shadow: none;
 }
 
 .menu-button:hover {
@@ -143,26 +172,44 @@ button:hover {
   display: none;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 40px;
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
   left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.dropdown-item {
-  display: block;
-  padding: 5px 10px;
-  color: #333;
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
+/* When you mouse over the navigation links, change their color */
 .dropdown-item:hover {
-  background-color: #f0f0f0;
+  background-color: #818181;
+  color: #f1f1f1;
+  
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 /* Media Queries for Responsiveness */

@@ -2,6 +2,8 @@ let score = 0;
 let lives = 3;
 let currentWord = "";
 let gameStarted = false;
+let highestScore = localStorage.getItem('verbalHighestScore') || 0;
+
 const appearedWords = new Set();
 
 const wordDisplay = document.getElementById("word-display");
@@ -9,7 +11,11 @@ const startBtn = document.getElementById("start-btn");
 const seenBtn = document.getElementById("seen-btn");
 const newBtn = document.getElementById("new-btn");
 const livesDisplay = document.getElementById("lives");
-const scoreDisplay = document.getElementById("current-score");
+const currentScoreDisplay = document.getElementById('current-score');
+const highestScoreDisplay = document.getElementById('highest-score');
+
+highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
+
 
 // Button to Start game
 startBtn.addEventListener("click", () => {
@@ -33,17 +39,21 @@ function startGame() {
 // Display the level
 function startLevel() {
   //   feedback.textContent = '';
-  scoreDisplay.textContent = `Score: ${score}`;
+  currentScoreDisplay.textContent = `Score: ${score}`;
   livesDisplay.textContent = `Lives: ${lives}`;
+  updateScores();
   // Lose the game
   if (lives == 0) {
     newBtn.classList.add("hidden");
     seenBtn.classList.add("hidden");
+
     wordDisplay.textContent = "You ran out of lives!";
     wordDisplay.style.color = 'red';
+
     startBtn.classList.remove("hidden");
     gameStarted = false;
   } else {
+    // updateScores();
     generateWord();
     showWord();
   }
@@ -57,17 +67,29 @@ function generateWord() {
 function showWord() {
   wordDisplay.textContent = currentWord;
   wordDisplay.classList.remove("hidden");
-
 }
+
+function updateScores() {
+  currentScoreDisplay.textContent = `Score: ${score}`;
+
+  // Update highest score if current score exceeds it
+  if (score > highestScore) {
+    highestScore = score;
+    localStorage.setItem('verbalHighestScore', highestScore);
+    highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
+  }
+
+};
 
 seenBtn.addEventListener("click", () => {
   if (!appearedWords.has(currentWord)) {
     appearedWords.add(currentWord);
+
     lives--;
-    scoreDisplay.textContent = `Score: ${score}`;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   } else {
-    score ++;
-    scoreDisplay.textContent = `Score: ${score}`;
+    score += 10;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   }
 
   startLevel();
@@ -75,11 +97,12 @@ seenBtn.addEventListener("click", () => {
 
 newBtn.addEventListener("click", () => {
   if (appearedWords.has(currentWord)) {
+
     lives --;
   } else {
     appearedWords.add(currentWord);
-    score++;
-    //scoreDisplay.textContent = `Score: ${score}`;
+    score += 10;
+    // currentScoreDisplay.textContent = `Score: ${score}`;
   }
   
   startLevel();
@@ -93,6 +116,18 @@ document.getElementById('menu-toggle').addEventListener('click', function () {
     dropdownMenu.style.display = "none"; // Hide the menu
   }
 });
+
+// side navigation bar
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.body.style.backgroundColor = "white";
+}
 
 const wordsBundle = [
   "Angel",

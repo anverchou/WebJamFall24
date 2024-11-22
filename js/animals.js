@@ -7,8 +7,9 @@ const resetButton = document.getElementById('new-game');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let score = 0;
+let score = 200;
 let moves = 0;
+let matchedPairs = 0;
 let highestScore = localStorage.getItem('highestScore') || 0;
 
 // Initialize score displays
@@ -49,12 +50,15 @@ function checkForMatch() {
   if (isMatch) {
     handleMatch();
   } else {
+    score -= 10;
+    updateScores();
     unflipCards();
   }
 }
 
 function handleMatch() {
-  score += 10; // Increment score for a successful match
+  matchedPairs++;
+  score += 50; // Increment score for a successful match
   updateScores();
 
   // Disable matched cards
@@ -89,15 +93,18 @@ function updateScores() {
   // Update highest score if current score exceeds it
   if (score > highestScore) {
     highestScore = score;
+    if (moves == 0) highestScore = 0;
+    if (matchedPairs == 0) highestScore = 0;
     localStorage.setItem('highestScore', highestScore);
   }
 
   highestScoreDisplay.textContent = `Highest Score: ${highestScore}`;
 }
 
-function endGame() {
-  alert(`Game Over! Final Score: ${score}`);
-}
+// Alert when game is over
+// function endGame() {
+//   alert(`Game Over! Final Score: ${score}`);
+// }
 
 // Shuffle the cards on load
 (function shuffle() {
@@ -123,7 +130,7 @@ function resetScores() {
 }
 
 function resetGame() {
-  score = 0;
+  score = 200;
   moves = 0;
   updateScores();
   
@@ -148,3 +155,46 @@ function goToMainMenu() {
 // Add event listeners
 cards.forEach((card) => card.addEventListener('click', flipCard));
 resetButton.addEventListener('click', resetGame);
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+// Music Section
+window.addEventListener('load', () => {
+  const music = document.getElementById('background-music');
+  music.play().catch((error) => {
+    console.log('Audio playback was prevented by the browser:', error);
+  });
+});
+
+const music = document.getElementById('background-music');
+const playButton = document.getElementById('volume-icon');
+
+playButton.addEventListener('click', () => {
+  if (music.paused) {
+    music.play().catch((error) => {
+      console.log('Audio playback was prevented by the browser:', error);
+    });
+    playButton.src = "./assets/images/theme/volume-up.svg";
+    playButton.alt = "Volume On";
+  } else {
+    music.pause();
+    playButton.src = "./assets/images/theme/volume-mute.svg";
+    playButton.alt = "Volume Off";
+  }
+});

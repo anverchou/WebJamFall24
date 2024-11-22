@@ -11,10 +11,22 @@
     href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Great+Vibes&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./css/animals.css">
-  <audio autoplay loop src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio>
+  <!-- <audio autoplay loop id="background-music" src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio> -->
 </head>
 
 <body>
+  <!-- Music Section-->
+  <!-- <audio autoplay loop id="background-music" src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/fileextension"></audio> -->
+
+  <audio id="background-music" loop autoplay>
+    <source src="assets\audio\jingle-bells-background-xmas-house-music-for-video-full-version-264306.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div>
+    <img src="./assets/images/theme/volume-up.svg" alt="Volume On" id="volume-icon" class="volume-icon">
+  </div>
+
   <!-- Snow Section-->
   <section class="snow">
     <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
@@ -43,12 +55,14 @@
     </div>
 
     <div class="dropdown-menu-container">
-      <button id="menu-toggle" class="menu-button">
+      <button id="menu-toggle" class="menu-button" onclick="openNav()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </button>
-      <div id="dropdown-menu" class="dropdown-menu hidden">
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.html" class="dropdown-item">Home</a>
         <a href="number.html" class="dropdown-item">Number Game</a>
         <a href="verbal.html" class="dropdown-item">Word Game</a>
