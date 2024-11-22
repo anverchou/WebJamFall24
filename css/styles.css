@@ -1,35 +1,48 @@
-body {
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
-  filter: drop-shadow(0 0 10px white);
-  animation: gradientAnimation 5s ease infinite;
-  overflow-x: hidden;
-  font-family: "Mountains of Christmas";
-}
-
-html {
+body, html {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  overflow-y: scroll; /* Enable vertical scrolling */
-}
-
-.volume-icon {
-  width: 10%;
-  height: 5rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  font-family: "Mountains of Christmas", cursive;
+  animation: gradientAnimation 5s ease infinite;
+  filter: drop-shadow(0 0 10px white);
+  position: relative;
+  cursor: url('./assets/images/theme/animals.svg'), auto; 
+  cursor: url('./assets/images/theme/numbers.svg'), auto; 
+  cursor: url('./assets/images/theme/verbals.svg'), auto; 
 }
 
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
+}
+
+.volume-icon {
+  width: 8%;
+  height: auto;
+  max-width: 50px;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.container {
+  flex-grow: 1; 
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .cover {
@@ -39,93 +52,89 @@ html {
 
 .col {
   color: white;
-  text-shadow:
+  text-shadow: 
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-  font-size: 50px;
+  font-size: 3rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Responsive Font Sizes */
-@media (max-width: 1024px) {
+.col:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-device-width: 1024px) {
   .col {
-    font-size: 2.5rem; /* Reduced font size for tablets */
+    font-size: 2.5rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
   .col {
-    font-size: 2rem; /* Reduced font size for smaller tablets */
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-device-width: 480px) {
   .col {
-    font-size: 1.5rem; /* Reduced font size for mobile phones */
+    font-size: 1.5rem;
   }
 }
 
-/* Snow container */
 .snow-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   pointer-events: none;
   z-index: -1;
-  overflow: hidden;
 }
 
 .snow {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 1vw;
+  height: 1vw;
   background: white;
   border-radius: 50%;
-}
-
-/* Responsive Snowflake Sizes */
-@media (max-width: 768px) {
-  .snow {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .snow {
-    width: 6px;
-    height: 6px;
-  }
+  animation: fall 10s linear infinite;
 }
 
 @keyframes fall {
-  100% {
-    transform: translate(10vw, 30vh) scale(0.5);
+  0% {
+    transform: translateY(-10%);
   }
-  to {
-    transform: translate(5vw, 100vh) scale(0.5);
+  100% {
+    transform: translateY(180vh);
   }
 }
 
-/* Layout and Padding Adjustments */
 @media (max-width: 1024px) {
-  body {
-    font-size: 1rem;
+  .snow {
+    width: 1.5vw;
+    height: 1.5vw;
   }
 }
 
 @media (max-width: 768px) {
-  body {
-    font-size: 0.9rem;
+  .snow {
+    width: 2vw;
+    height: 2vw;
   }
 }
 
 @media (max-width: 480px) {
-  body {
-    font-size: 0.8rem;
-    padding: 10px;
+  .snow {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .snow {
+    width: 4vw;
+    height: 4vw;
   }
 }
