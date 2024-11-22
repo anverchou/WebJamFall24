@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #B19CD8, #D955B5);
+  background: linear-gradient(135deg, #72b489, #e7e2a7);
   animation: gradientAnimation 5s ease infinite;
 }
 
