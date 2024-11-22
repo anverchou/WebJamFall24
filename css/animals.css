@@ -98,9 +98,10 @@ h1 {
 /* Snow section */
 body {
   background: linear-gradient(180deg, #87cefa, #b19cd9, #98fb98, #ffc0cb);
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-size:cover;
+  height: 120vh;
   margin: 0;
+  padding:0;
   overflow: scroll;
   color: white;
   position: relative;
