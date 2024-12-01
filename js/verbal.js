@@ -156,6 +156,29 @@ function closeNav() {
   document.body.style.backgroundColor = "white";
 }
 
+// Music Section
+window.addEventListener('load', () => {
+  const music = document.getElementById('background-music');
+  music.play().catch((error) => {
+    console.log('Audio playback was prevented by the browser:', error);
+  });
+});
+
+const music = document.getElementById('background-music');
+const playButton = document.getElementById('volume-icon');
+
+playButton.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    playButton.src = "./assets/images/theme/volume-up.svg";
+    playButton.alt = "Volume On";
+  } else {
+    music.pause();
+    playButton.src = "./assets/images/theme/volume-mute.svg";
+    playButton.alt = "Volume Off";
+  }
+});
+
 const wordsBundle = [
   "Angel",
   "Birth",
